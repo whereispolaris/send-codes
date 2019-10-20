@@ -1,0 +1,27 @@
+import React from 'react';
+import './Article.css'
+
+const Article = (props) => {
+    return (
+        <div className="card book-card">
+            <div className="row no-gutters">
+                <div className="col-md-2">
+                    <img src={props.image} className="card-img" alt="" />
+                </div>
+                <div className="col-md-8">
+                    <div className="card-body">
+                        <h4 className="card-title">{props.title}</h4>
+                        <p className="card-text">{props.body}</p>
+                        <p className="card-text"><strong>Author: {props.author}</strong></p>
+                    </div>
+                </div>
+                <div className="col-md-1">
+                    <button onClick={props.handleFavorite} type="button" className="btn btn-secondary">{props.isSaved ? "Delete Article" : "Save Article"}</button>
+                    <a href={props.articleLink} className="btn btn-dark" target="_blank">View Article</a>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Article;
