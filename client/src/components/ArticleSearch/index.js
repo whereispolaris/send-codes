@@ -1,4 +1,5 @@
 import React from 'react';
+import Article from '../Article';
 
 const ArticleSearch = () => {
     return (
@@ -35,6 +36,22 @@ const ArticleSearch = () => {
             {/* {
                 // Map Articles here
             } */}
+            <Article
+                image="https://picsum.photos/id/1073/100/100"
+                title="JavaScript Variables"
+                author="Santiago Enciso"
+                handleFavorite="Function"
+                isSaved="Function"
+                articleLink="Link"
+            />
+            <Article
+                image="https://picsum.photos/id/1073/100/100"
+                title="Laravel Installation"
+                author="Santiago Enciso"
+                handleFavorite="Function"
+                isSaved="Function"
+                articleLink="Link"
+            />
         </div>
     )
 }
