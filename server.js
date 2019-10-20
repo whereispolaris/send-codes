@@ -15,7 +15,7 @@ const client = contentful.createClient({
   // host: "preview.contentful.com"
 });
 
-// Get Articles from Contentful
+// Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
   client.getEntries()
     .then(response => {
@@ -25,6 +25,18 @@ app.get("/api/articles", (req, res) => {
       res.send("error", error);
     })
 })
+
+// Get ONLY blog posts from Contentful
+app.get("/api/blogs", (req, res) => {
+  client.getContentType('blogPost')
+    .then(response => {
+      res.json(response);
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+})
+
 
 
 // Serve up static assets (usually on heroku)
