@@ -10,9 +10,8 @@ class ArticleSearch extends Component {
 
     componentDidMount() {
         axios.get("/api/articles").then(response => {
-            this.setState({ results: response.data.items })
-            console.log(this.state.results[0].fields.title)
-            console.log(this.state.results[0].fields.body)
+            this.setState({ articles: response.data.items })
+            // console.log(this.state.results[0].fields)
         })
     }
 
@@ -48,25 +47,22 @@ class ArticleSearch extends Component {
                         </div>
                     </li>
                 </ul>
-                {/* {
-                // Map Articles here
-            } */}
-                <Article
-                    image="https://picsum.photos/id/1073/100/100"
-                    title="JavaScript Variables"
-                    author="Santiago Enciso"
-                    handleFavorite="Function"
-                    isSaved="Function"
-                    articleLink="Link"
-                />
-                <Article
-                    image="https://picsum.photos/id/1073/100/100"
-                    title="Laravel Installation"
-                    author="Santiago Enciso"
-                    handleFavorite="Function"
-                    isSaved="Function"
-                    articleLink="Link"
-                />
+                {
+                    this.state.articles.map((article, index) => (
+                        <Article
+                            key={article.sys.id}
+                            image="https://picsum.photos/id/1073/100/100"
+                            title={article.fields.title}
+                            body={article.fields.body}
+                            author="Santiago Enciso"
+                            // handleFavorite="Function"
+                            // isSaved="Function"
+                            articleLink="https://picsum.photos/id/1073/100/100"
+                        />
+                    ))
+                }
+
+
             </div>
         )
     }

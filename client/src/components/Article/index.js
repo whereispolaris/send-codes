@@ -18,7 +18,7 @@ const Article = (props) => {
                 <div className="col-md-1">
                     {/* <button onClick={props.handleFavorite} type="button" className="btn btn-secondary">{props.isSaved ? "Delete Article" : "Save Article"}</button> */}
                     <button type="button" className="btn btn-secondary">{props.isSaved ? "Delete Article" : "Save Article"}</button>
-                    <a href={props.articleLink} className="btn btn-dark" target="_blank">View Article</a>
+                    <a href="/" className="btn btn-dark">View Article</a>
                 </div>
             </div>
         </div>
