@@ -1,5 +1,6 @@
 import React from 'react';
 import './Article.css'
+import Markdown from 'markdown-to-jsx';
 
 const Article = (props) => {
     return (
@@ -11,7 +12,11 @@ const Article = (props) => {
                 <div className="col-md-8">
                     <div className="card-body">
                         <h4 className="card-title">{props.title}</h4>
-                        <p className="card-text">{props.body}</p>
+                        <p className="card-text">
+                            <Markdown>
+                                {`${props.body}`}
+                            </Markdown>
+                        </p>
                         <p className="card-text"><strong>Author: {props.author}</strong></p>
                     </div>
                 </div>
