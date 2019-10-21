@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 require('dotenv').config();
 
-
 // Contentful
 const contentful = require("contentful");
 
@@ -24,11 +23,13 @@ app.get("/api/articles", (req, res) => {
     .catch((error) => {
       res.send("error", error);
     })
-})
+});
 
-// Get ONLY blog posts from Contentful
+// Get ONLY blog posts from Contentful - Works! 
 app.get("/api/blogs", (req, res) => {
-  client.getContentType('blogPost')
+  client.getEntries({
+    'content_type': 'blogPost'
+  })
     .then(response => {
       res.json(response);
     })
@@ -37,7 +38,16 @@ app.get("/api/blogs", (req, res) => {
     })
 })
 
-
+// Get ONE entry from Contentful 
+app.get("/api/blogs/:id", (req, res) => {
+  client.getEntry(req.params.id)
+    .then(entry => {
+      res.json(entry);
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+})
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
