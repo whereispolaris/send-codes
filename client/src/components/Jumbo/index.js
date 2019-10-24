@@ -1,4 +1,5 @@
 import React from 'react';
+import './Jumbo.css'
 
 const Jumbo = () => {
     return (
@@ -6,7 +7,7 @@ const Jumbo = () => {
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h1 className="display-4 text-center">Send Codes</h1>
-                    <p className="lead text-center">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                    <p className="lead text-center">Find boilerplate for your project.</p>
                 </div>
             </div>
         </div>

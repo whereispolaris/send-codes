@@ -1,0 +1,10 @@
+.nav-link {
+    border: 4px grey outset;
+    
+}
+.nav-link:hover {
+    border: 4px grey inset;
+}
+h1{
+    font:  74px;
+}
