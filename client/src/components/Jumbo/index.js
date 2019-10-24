@@ -6,8 +6,8 @@ const Jumbo = () => {
         <div>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">SEND CODES</h1>
-                    <p className="lead text-center">Find boilerplate for your project.</p>
+                    {/* <h1 className="display-4 text-center">SEND CODES</h1> */}
+                    {/* <p className="lead text-center">Find boilerplate for your project.</p> */}
                 </div>
             </div>
         </div>
