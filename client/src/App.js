@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
 import "./App.css";
-
+import "./fonts/stylesheet.css";
 
 
 class App extends Component {

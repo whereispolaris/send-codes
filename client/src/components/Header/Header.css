@@ -1,9 +1,13 @@
-.nav-link {
-    border: 4px grey outset;
+.linkstr {
+    border: 6px grey outset;
+    border-spacing: 2%;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
     
 }
-.nav-link:hover {
-    border: 4px grey inset;
+.linkstr:hover {
+    border: 6px grey inset;
 }
 h1{
     font:  74px;
