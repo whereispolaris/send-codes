@@ -19,6 +19,7 @@ class ArticleSearch extends Component {
     render() {
         return (
             <div>
+                {/* <input type="text" className="input" placeholder="Search..." /> */}
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
@@ -30,7 +31,7 @@ class ArticleSearch extends Component {
                         </div>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Frameworks</a>
+                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Topic</a>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">React</a>
                             <a className="dropdown-item" href="#">Bootstrap</a>
@@ -48,6 +49,7 @@ class ArticleSearch extends Component {
                         </div>
                     </li>
                 </ul>
+                
                 {
                     this.state.articles.map((article, index) => (
                         <Article
