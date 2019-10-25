@@ -1,7 +1,22 @@
+.jumbotron-fluid {
+    margin-top: 0px;
+    height: 20x;
+}
+.container{
+    margin-top: 0px;
+}
 .jumbotron  {
     background-color: white;
+    height: 30px;
+    line-height: 5px;
+    margin-top: 0px;
 }
 .display-4{
-    font-size: 72px;
-    font-family: 'Logotronik';
+    font-size: 82px;
+    font-family: 'ticketing';
+}
+.lead {
+    margin-top: 10px;
+    font-family: 'ticketing';
+    font-style: bolder;
 }

@@ -1,3 +1,6 @@
 .nav{
     margin-top: 5px;
 }
+.nav-item dropdown:hover {
+    color: black;
+}
