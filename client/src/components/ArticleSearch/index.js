@@ -29,17 +29,12 @@ class ArticleSearch extends Component {
                 </form>
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
+                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</a>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">JavaScript</a>
                             <a className="dropdown-item" href="#">HTML</a>
                             <a className="dropdown-item" href="#">CSS</a>
                             <a className="dropdown-item" href="#">PHP</a>
-                        </div>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Topic</a>
-                        <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">React</a>
                             <a className="dropdown-item" href="#">Bootstrap</a>
                             <a className="dropdown-item" href="#">Laravel</a>
