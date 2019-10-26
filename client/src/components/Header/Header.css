@@ -1,0 +1,29 @@
+.linkstr {
+    /* border: 2px grey outset;
+    border-spacing: 1%; */
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    font-family:'ticketingregular';
+    font-size: 20px;
+}
+.linkstr:hover {
+    /* border: 2px grey inset;
+    border-spacing: 1%; */
+    margin-left: 2px;
+    margin-right: 2px;
+    text-align: center;
+    font-family:'ticketingregular';
+    font-size: 20px;
+}
+a {
+    height: 25px;
+
+}
+/* h1{
+    font:  54px;
+    margin-top: 35px;
+}
+p{
+    font-family: 'ticketingregular';
+} */

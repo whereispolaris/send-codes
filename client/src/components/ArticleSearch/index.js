@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Article from '../Article';
 const axios = require('axios');
 
+
 class ArticleSearch extends Component {
 
     state = {
@@ -18,6 +19,14 @@ class ArticleSearch extends Component {
     render() {
         return (
             <div>
+                <form>
+                    <div className="search-box">
+                        <div className="textbox">
+                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
+                            <button className="search-button">Search</button>
+                        </div>
+                    </div>
+                </form>
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
@@ -47,6 +56,7 @@ class ArticleSearch extends Component {
                         </div>
                     </li>
                 </ul>
+                
                 {
                     this.state.articles.map((article, index) => (
                         <Article
