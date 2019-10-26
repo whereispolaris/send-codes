@@ -9,14 +9,6 @@ const Jumbo = () => {
                     <h1 className="display-4 text-center">SEND CODES</h1> 
                     <p className="lead text-center">Find boilerplate for your project.</p>
                 </div>
-                <form>
-                    <div className="search-box">
-                        <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
-                            <button className="search-button">Enter</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     )

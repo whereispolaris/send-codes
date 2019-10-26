@@ -21,28 +21,3 @@
     font-style: bolder;
 }
 
-input{
-    margin-left:30%;
-    width: 400px;
-    height:40px;
-    padding: 0 10px;
-    border-radius: 10px 13px 13px 10px;
-    letter-spacing: 2px;
-    font-weight: 600;
-}
-.search-button {
-    width: 200px;
-    height: 35px;
-    background-color: white;
-    padding: 0 10px;
-    border-radius: 10px 13px 13px 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border: 1px solid black;
-    font-size: 20px;
-    cursor: pointer;
-}
-.search-button:hover{
-    background-color: black;
-    color: white;
-}

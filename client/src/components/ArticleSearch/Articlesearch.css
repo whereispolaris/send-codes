@@ -4,4 +4,62 @@
 .nav-item dropdown:hover {
     color: black;
 }
+input{
+    margin-left:30%;
+    width: 400px;
+    height:40px;
+    padding: 0 10px;
+    border-radius: 10px 13px 13px 10px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+.search-button {
+    margin-top: 60px;
+    width: 200px;
+    height: 35px;
+    background-color: white;
+    padding: 0 10px;
+    border-radius: 10px 13px 13px 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid black;
+    font-size: 20px;
+    cursor: pointer;
+}
+.search-button:hover{
+    background-color: black;
+    color: white;
+}
 
+
+  
+  .dropdown {
+    position: absolute;
+    display: inline-block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu a:hover {background-color: #f1f1f1}
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: black;
+  }

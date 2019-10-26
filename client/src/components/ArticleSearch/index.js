@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Article from '../Article';
+import './Articlesearch.css';
 const axios = require('axios');
 
 
@@ -20,9 +21,18 @@ class ArticleSearch extends Component {
     render() {
         return (
             <div>
-                {/* <ul className="nav nav-pills nav-fill">
+                <form>
+                    <div className="search-box">
+                        <div className="textbox">
+                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
+                            <button className="search-button">Enter</button>
+                        </div>
+                    </div>
+                </form>
+
+                <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</a>
+                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Results</a>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">JavaScript</a>
                             <a className="dropdown-item" href="#">HTML</a>
@@ -34,16 +44,7 @@ class ArticleSearch extends Component {
                             <a className="dropdown-item" href="#">Express</a>
                         </div>
                     </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Results</a>
-                        <div className="dropdown-menu">
-                            <a className="dropdown-item" href="#">5</a>
-                            <a className="dropdown-item" href="#">10</a>
-                            <a className="dropdown-item" href="#">20</a>
-                            <a className="dropdown-item" href="#">100</a>
-                        </div>
-                    </li>
-                </ul> */}
+                </ul>
                 
                 {
                     this.state.articles.map((article, index) => (
