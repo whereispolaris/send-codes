@@ -14,7 +14,6 @@ class App extends Component {
         <Header />
         <Jumbo />
         <div className="container">
-          {/* <SearchBar/> */}
           <ArticleSearch />
         </div>
       </div>
