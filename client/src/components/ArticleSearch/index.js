@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Article from '../Article';
+import './Articlesearch.css';
 const axios = require('axios');
+
 
 
 class ArticleSearch extends Component {
@@ -21,42 +23,29 @@ class ArticleSearch extends Component {
             <div>
                 <form>
                     <div className="search-box">
-                        <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
-                            <button className="search-button">Search</button>
-                        </div>
-                    </div>
-                </form>
+                    <div className="droppdown">
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Language</a>
+                        <button className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</button>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">JavaScript</a>
                             <a className="dropdown-item" href="#">HTML</a>
                             <a className="dropdown-item" href="#">CSS</a>
                             <a className="dropdown-item" href="#">PHP</a>
-                        </div>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Topic</a>
-                        <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">React</a>
                             <a className="dropdown-item" href="#">Bootstrap</a>
                             <a className="dropdown-item" href="#">Laravel</a>
                             <a className="dropdown-item" href="#">Express</a>
                         </div>
                     </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Results</a>
-                        <div className="dropdown-menu">
-                            <a className="dropdown-item" href="#">5</a>
-                            <a className="dropdown-item" href="#">10</a>
-                            <a className="dropdown-item" href="#">20</a>
-                            <a className="dropdown-item" href="#">100</a>
-                        </div>
-                    </li>
                 </ul>
-                
+                </div>
+                        <div className="textbox">
+                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
+                            <button className="search-button">Enter</button>
+                        </div>
+                    </div>
+                </form>
                 {
                     this.state.articles.map((article, index) => (
                         <Article

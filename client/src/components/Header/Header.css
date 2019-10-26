@@ -1,6 +1,6 @@
 .linkstr {
-    /* border: 2px grey outset;
-    border-spacing: 1%; */
+    /* border: 2px grey outset; */
+    border-spacing: 1%;
     margin-left: 2px;
     margin-right: 2px;
     text-align: center;
@@ -8,8 +8,8 @@
     font-size: 20px;
 }
 .linkstr:hover {
-    /* border: 2px grey inset;
-    border-spacing: 1%; */
+    /* border: 2px grey inset; */
+    border-spacing: 1%;
     margin-left: 2px;
     margin-right: 2px;
     text-align: center;
