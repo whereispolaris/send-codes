@@ -3,6 +3,7 @@ import Article from '../Article';
 const axios = require('axios');
 
 
+
 class ArticleSearch extends Component {
 
     state = {
@@ -19,15 +20,7 @@ class ArticleSearch extends Component {
     render() {
         return (
             <div>
-                <form>
-                    <div className="search-box">
-                        <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
-                            <button className="search-button">Search</button>
-                        </div>
-                    </div>
-                </form>
-                <ul className="nav nav-pills nav-fill">
+                {/* <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</a>
                         <div className="dropdown-menu">
@@ -50,7 +43,7 @@ class ArticleSearch extends Component {
                             <a className="dropdown-item" href="#">100</a>
                         </div>
                     </li>
-                </ul>
+                </ul> */}
                 
                 {
                     this.state.articles.map((article, index) => (
