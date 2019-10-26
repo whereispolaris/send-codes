@@ -23,7 +23,7 @@
 
 input{
     margin-left:30%;
-    width: 600px;
+    width: 400px;
     height:40px;
     padding: 0 10px;
     border-radius: 10px 13px 13px 10px;
@@ -38,8 +38,11 @@ input{
     border-radius: 10px 13px 13px 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-   
     border: 1px solid black;
     font-size: 20px;
     cursor: pointer;
+}
+.search-button:hover{
+    background-color: black;
+    color: white;
 }
