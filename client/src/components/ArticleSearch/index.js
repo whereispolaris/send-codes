@@ -23,16 +23,10 @@ class ArticleSearch extends Component {
             <div>
                 <form>
                     <div className="search-box">
-                        <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
-                            <button className="search-button">Enter</button>
-                        </div>
-                    </div>
-                </form>
-
+                    <div className="droppdown">
                 <ul className="nav nav-pills nav-fill">
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Results</a>
+                        <button className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</button>
                         <div className="dropdown-menu">
                             <a className="dropdown-item" href="#">JavaScript</a>
                             <a className="dropdown-item" href="#">HTML</a>
@@ -45,7 +39,13 @@ class ArticleSearch extends Component {
                         </div>
                     </li>
                 </ul>
-                
+                </div>
+                        <div className="textbox">
+                            <input type="text" name="search" placeholder="Search" autoComplete="off"className="auto-expand" />
+                            <button className="search-button">Enter</button>
+                        </div>
+                    </div>
+                </form>
                 {
                     this.state.articles.map((article, index) => (
                         <Article
