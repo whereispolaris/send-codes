@@ -13,6 +13,9 @@ const Header = () => {
                 </ul>
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item" className="linkstr">
+                        <Link className="nav-link" to="/testarticle">Test Article</Link>
+                    </li>
+                    <li className="nav-item" className="linkstr">
                         <Link className="nav-link" to="/about">About</Link>
                     </li>
                     <li className="nav-item" className="linkstr">
