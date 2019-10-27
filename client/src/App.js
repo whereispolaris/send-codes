@@ -4,7 +4,7 @@ import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
 import "./App.css";
 import "./fonts/stylesheet.css";
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 
