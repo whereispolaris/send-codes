@@ -2,22 +2,29 @@ import React, { Component } from "react";
 import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
+import About from './components/About';
 import "./App.css";
 import "./fonts/stylesheet.css";
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
-class App extends Component {
-  render() {
-    return (
+
+const App = () => {
+  return (
+    <BrowserRouter>
       <div>
         <Header />
         <Jumbo />
         <div className="container">
-          <ArticleSearch />
+          <Switch>
+            <Route exact path="/" component={ArticleSearch} />
+            <Route exact path="/about" component={About} />
+            {/* <Route component={NotFound} /> */}
+          </Switch>
         </div>
       </div>
-    );
-  }
+    </BrowserRouter>
+  );
 }
 
 export default App;
