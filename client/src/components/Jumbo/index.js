@@ -6,8 +6,8 @@ const Jumbo = () => {
         <div>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h1 className="display-4 text-center">SEND CODES</h1> 
-                    <p className="lead text-center">Find boilerplate for your project.</p>
+                    <h1 className="display-4 text-center">Send Codes</h1>
+                    <p className="lead text-center">Code Snippets for Full Stack Development Projects</p>
                 </div>
             </div>
         </div>
@@ -25,15 +25,15 @@ export default Jumbo;
 //           background: '#eee'
 //         }
 //       }
-      
+
 //       this._handleTextFocus = this._handleTextFocus.bind(this);
 //       this._handleClick = this._handleClick.bind(this);
 //       this._handleTextBlur = this._handleTextBlur.bind(this);
 //     }
-    
+
 //     _handleTextFocus(e) {
 //       e.preventDefault();
-      
+
 //       this.setState({
 //         searchboxStyle: {
 //           width: '100%',
@@ -41,7 +41,7 @@ export default Jumbo;
 //         }
 //       })
 //     }
-    
+
 //     _handleTextBlur(e) {
 //       e.preventDefault();
 //       if (!this._searchBox.value && !this._searchBox.value.length > 0) 
