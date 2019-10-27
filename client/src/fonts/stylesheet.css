@@ -1,4 +1,14 @@
+
 @font-face {
+    font-family: 'ticketingregular';
+    src: url('ticketing-webfont.woff2') format('woff2'),
+         url('ticketing-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*@font-face {
     font-family: '7_segmental_digital_displayRg';
     src: url('7sdd-webfont.woff2') format('woff2'),
          url('7sdd-webfont.woff') format('woff');
@@ -201,13 +211,7 @@
     font-weight: normal;
     font-style: normal;
 }
-@font-face {
-    font-family: 'ticketingregular';
-    src: url('ticketing-webfont.woff2') format('woff2'),
-         url('ticketing-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 @font-face {
     font-family: 'xlmonoaltregular';
     src: url('xlmonoalt-webfont.woff2') format('woff2'),
@@ -260,4 +264,4 @@
     src:url("LEGO BRIX.woff2") format("woff2")
         url("LEGO BRIX.woff") format("woff");
     font-style:normal;font-weight:400;
-}
+}*/

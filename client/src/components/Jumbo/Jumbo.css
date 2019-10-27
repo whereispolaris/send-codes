@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'orange_juiceregular';
+    src: url('../../fonts/orange-juice-2.0-webfont.woff2') format('woff2'),
+         url('../../fonts/orange-juice-2.0-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+    font-family: 'orange_juiceregular' !important;
+}
+
 .jumbotron-fluid {
     margin-top: 0px;
     height: 20x;
@@ -20,4 +33,5 @@
     font-family: 'ticketing';
     font-style: bolder;
 }
+
 
