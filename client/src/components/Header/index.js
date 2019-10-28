@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import { Link } from "react-router-dom";
+import logo from './send-codes-logo.png';
 
 const Header = () => {
     return (
@@ -8,7 +9,7 @@ const Header = () => {
             <nav className="navbar navbar-expand-lg navbar-light bg justify-content-between">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item" className="linkstr">
-                        <Link className="nav-link" to="/">Send Codes</Link>
+                        <Link className="nav-link" to="/"><img className="main-logo" src={logo} /></Link>
                     </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">

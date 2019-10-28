@@ -18,8 +18,15 @@
 }
 a {
     height: 25px;
-
 }
+
+.main-logo {
+    width: 120px;
+    position: absolute;
+    top: 10px;
+}
+
+
 /* h1{
     font:  54px;
     margin-top: 35px;
