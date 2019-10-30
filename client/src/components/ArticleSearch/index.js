@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Article from '../Article';
 import './Articlesearch.css';
 const axios = require('axios');
 
 
 
-class ArticleSearch extends Component {
+const ArticleSearch = () => {
 
-    state = {
-        articles: []
-    }
+    const [articles, setArticle] = useState([]);
+    const [load, setLoad] = useState(false);
 
-    componentDidMount() {
+    useEffect(() => {
         axios.get("/api/blogs").then(response => {
-            this.setState({ articles: response.data.items })
+            setArticle(response.data.items);
+            setLoad(true);
         })
-    }
+    }, []);
 
-    render() {
+
+    if (load) {
         return (
             <div>
                 <form>
@@ -46,7 +47,7 @@ class ArticleSearch extends Component {
                     </div>
                 </form>
                 {
-                    this.state.articles.map((article, index) => (
+                    articles.map((article, index) => (
                         <Article
                             key={article.sys.id}
                             image="https://picsum.photos/id/1073/100/100"
@@ -59,8 +60,13 @@ class ArticleSearch extends Component {
                         />
                     ))
                 }
-
-
+            </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                ....Loading
             </div>
         )
     }
