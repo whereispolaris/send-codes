@@ -42,7 +42,7 @@ input{
 }
 .dropdown-toggle {
     position: fixed;
-    margin-top: 60px;
+    margin-top: .60px;
 }
   
 .dropdown-menu {
@@ -63,4 +63,8 @@ input{
     width: 300px;
     position: relative;
     float: inline-start;
+}
+#dropDownButton{
+    margin-top: 60px;
+    position:absolute;
 }
