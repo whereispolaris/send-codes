@@ -6,27 +6,27 @@ const ArticlePage = () => {
 
     const [article, setArticle] = useState({});
     const [load, setLoad] = useState(false);
-          
-      useEffect(() => {
+
+    useEffect(() => {
         axios.get("/api/blogs/" + "7oihrLo4pnRmbVRw89q5My")
-        .then(response => {
-            setArticle(response.data);
-            console.log(article)
-            setLoad(true);
-        })
-  },[]);
+            .then(response => {
+                setArticle(response.data);
+                console.log(article)
+                setLoad(true);
+            })
+    }, []);
 
     if (load) {
         return (
             <div>
-            {console.log(article)}
-                            <Article
-                key={article.sys.id}
-                image="https://picsum.photos/id/1073/100/100"
-                title={article.fields.title}
-                body={article.fields.body}
-                author={article.fields.author.fields.name}
-                handleFavorite="Function"
+                {console.log(article)}
+                <Article
+                    key={article.sys.id}
+                    image="https://picsum.photos/id/1073/100/100"
+                    title={article.fields.title}
+                    body={article.fields.body}
+                    author={article.fields.author.fields.name}
+                    handleFavorite="Function"
                 // isSaved="Function"
                 // articleLink="https://picsum.photos/id/1073/100/100"
                 />
@@ -36,7 +36,7 @@ const ArticlePage = () => {
     else {
         return (
             <div>
-            .... Loading
+                .... Loading
             </div>
         )
     }
