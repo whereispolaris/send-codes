@@ -22,10 +22,10 @@ class ArticleSearch extends Component {
             <div>
                 <form>
                     <div className="search-box">
-                        <div className="droppdown">
+                        <div className="dropdown">
                             <ul className="nav nav-pills nav-fill">
                                 <li className="nav-item dropdown">
-                                    <button className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</button>
+                                    <button id="dropDownButton" className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Popular</button>
                                     <div className="dropdown-menu">
                                         <a className="dropdown-item" href="#">JavaScript</a>
                                         <a className="dropdown-item" href="#">HTML</a>
