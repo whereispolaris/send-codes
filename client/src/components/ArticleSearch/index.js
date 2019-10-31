@@ -51,7 +51,7 @@ const ArticleSearch = () => {
                     articles.map((article, index) => (
                         <Article
                             key={article.sys.id}
-                            image="https://picsum.photos/id/1073/100/100"
+                            // image="https://picsum.photos/id/1073/100/100"
                             title={article.fields.title}
                             body={article.fields.body}
                             author={article.fields.author.fields.name}
