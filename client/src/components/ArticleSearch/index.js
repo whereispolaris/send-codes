@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Article from '../Article';
+import Loading from '../Loading';
 import './Articlesearch.css';
 const axios = require('axios');
 
@@ -66,7 +67,7 @@ const ArticleSearch = () => {
     else {
         return (
             <div>
-                ....Loading
+                <Loading/>
             </div>
         )
     }
