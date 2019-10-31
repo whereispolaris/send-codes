@@ -18,7 +18,8 @@ const App = () => {
         <Jumbo />
         <div className="container">
           <Switch>
-            <Route exact path="/" component={ArticleSearch} />
+            <Route exact path="/" component={ArticlePage} />
+            <Route exact path="/snippets" component={ArticleSearch} />
             <Route exact path="/about" component={About} />
             <Route exact path="/testarticle" component={ArticlePage} />
             {/* <Route component={NotFound} /> */}
