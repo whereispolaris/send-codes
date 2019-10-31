@@ -3,7 +3,7 @@ import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
 import About from './components/About';
-import ArticlePage from './components/ArticlePage';
+import Home from './components/Home';
 import "./App.css";
 import "./fonts/stylesheet.css";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -18,10 +18,10 @@ const App = () => {
         <Jumbo />
         <div className="container">
           <Switch>
-            <Route exact path="/" component={ArticlePage} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/snippets" component={ArticleSearch} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/testarticle" component={ArticlePage} />
+            <Route exact path="/testarticle" component={Home} />
             {/* <Route component={NotFound} /> */}
           </Switch>
         </div>
