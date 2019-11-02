@@ -35,28 +35,28 @@ const client = contentful.createClient({
 app.use(passport.initialize())
 app.use(passport.session()) // calls serializeUser and deserializeUser
 
-// app.use( (req, res, next) => {
-//   console.log('req.session', req.session);
-//   return next();
-// });
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  return next();
+});
 
-// app.use(
-//   session({
-//   secret: 'send-ze-codes',
-//   resave: false, 
-//   saveUninitialized: false
-//   })
-// );
+app.use(
+  session({
+  secret: 'send-ze-codes',
+  resave: false, 
+  saveUninitialized: false
+  })
+);
 
-// // Authentication route
-// // app.use('/user', user)
+// Authentication route
+app.use('/user', user)
 
-// // TEST ROUTE - REMOVE LATER
-app.post('/user', (req, res) => {
-  console.log(req.body.username);
-  req.session.username = req.body.username;
-  res.end()
-})
+// // // TEST ROUTE - REMOVE LATER
+// app.post('/user', (req, res) => {
+//   console.log(req.body.username);
+//   req.session.username = req.body.username;
+//   res.end()
+// })
 
 
 
