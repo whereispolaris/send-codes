@@ -1,9 +1,10 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const session = require('express-session');
 const app = express();
-require('dotenv').config();
 const dbConnection = require('./database');
+require('dotenv').config();
 // Route requires
 const user = require('./routes/user');
 
@@ -16,6 +17,12 @@ const client = contentful.createClient({
   // ,
   // host: "preview.contentful.com"
 });
+
+app.use(
+  session({
+  secret: 'send-ze-codes'
+  })
+);
 
 // Authentication route
 app.use('/user', user)
