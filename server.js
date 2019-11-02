@@ -29,8 +29,41 @@ const client = contentful.createClient({
   host: "preview.contentful.com"
 });
 
-// AUTHENTICATION
+// Get ONLY blog posts from Contentful - Works! 
+app.get("/api/blogs",(req, res) => {
+  client.getEntries({
+    'content_type': 'blogPost'
+  })
+    .then(response => {
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+})
 
+// Get ONE entry from Contentful 
+app.get("/api/blogs/:id", (req, res) => {
+  client.getEntry(req.params.id)
+    .then(entry => {
+      res.json(entry);
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+})
+
+// Get ALL ENTRIES from Contentful
+app.get("/api/articles", (req, res) => {
+  client.getEntries()
+    .then(response => {
+      res.json(response);
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+});
+
+// AUTHENTICATION
 // Passport
 app.use(passport.initialize())
 app.use(passport.session()) // calls serializeUser and deserializeUser
@@ -51,47 +84,7 @@ app.use(
 // Authentication route
 app.use('/user', user)
 
-// // // TEST ROUTE - REMOVE LATER
-// app.post('/user', (req, res) => {
-//   console.log(req.body.username);
-//   req.session.username = req.body.username;
-//   res.end()
-// })
 
-// Get ALL ENTRIES from Contentful
-app.get("/api/articles", (req, res) => {
-  client.getEntries()
-    .then(response => {
-      res.json(response);
-    })
-    .catch((error) => {
-      res.send("error", error);
-    })
-});
-
-// Get ONLY blog posts from Contentful - Works! 
-app.get("/api/blogs", (req, res) => {
-  client.getEntries({
-    'content_type': 'blogPost'
-  })
-    .then(response => {
-      res.json(response);
-    })
-    .catch((error) => {
-      res.send("error", error);
-    })
-})
-
-// Get ONE entry from Contentful 
-app.get("/api/blogs/:id", (req, res) => {
-  client.getEntry(req.params.id)
-    .then(entry => {
-      res.json(entry);
-    })
-    .catch((error) => {
-      res.send("error", error);
-    })
-})
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
