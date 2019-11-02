@@ -2,11 +2,9 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
-//your local database url
-//27017 is the default mongoDB port
-const uri = 'mongodb://localhost:27017/simple-mern-passport' 
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googleBooks";
 
-mongoose.connect(uri).then(
+mongoose.connect(MONGODB_URI).then(
     () => { 
         /** ready to use. The `mongoose.connect()` promise resolves to undefined. */ 
         console.log('Connected to Mongo');
@@ -19,6 +17,5 @@ mongoose.connect(uri).then(
          
         }
   );
-
 
 module.exports = mongoose.connection
