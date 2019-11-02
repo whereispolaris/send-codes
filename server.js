@@ -3,6 +3,9 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 require('dotenv').config();
+const dbConnection = require('./database');
+// Route requires
+const user = require('./routes/user');
 
 // Contentful
 const contentful = require("contentful");
@@ -13,6 +16,9 @@ const client = contentful.createClient({
   // ,
   // host: "preview.contentful.com"
 });
+
+// Authentication route
+app.use('/user', user)
 
 // Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
