@@ -58,9 +58,6 @@ app.use('/user', user)
 //   res.end()
 // })
 
-
-
-
 // Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
   client.getEntries()

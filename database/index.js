@@ -2,7 +2,7 @@
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googleBooks";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/sendCodesUsers";
 
 mongoose.connect(MONGODB_URI).then(
     () => { 
