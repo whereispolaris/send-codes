@@ -1,13 +1,24 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
+const morgan = require('morgan')
 const app = express();
 const dbConnection = require('./database');
-const passport = require('./passport');
+// const passport = require('./passport');
 require('dotenv').config();
 // Route requires
 const user = require('./routes/user');
+
+// MIDDLEWARE
+app.use(morgan('dev'))
+app.use(
+	bodyParser.urlencoded({
+		extended: false
+	})
+)
+app.use(bodyParser.json());
 
 // Contentful
 const contentful = require("contentful");
@@ -21,19 +32,30 @@ const client = contentful.createClient({
 
 // AUTHENTICATION
 
-app.use( (req, res, next) => {
-  console.log('req.session', req.session);
-  return next();
-});
+// app.use( (req, res, next) => {
+//   console.log('req.session', req.session);
+//   return next();
+// });
 
-app.use(
-  session({
-  secret: 'send-ze-codes'
-  })
-);
+// app.use(
+//   session({
+//   secret: 'send-ze-codes',
+//   resave: false, 
+//   saveUninitialized: false
+//   })
+// );
 
-// Authentication route
-// app.use('/user', user)
+// // Authentication route
+// // app.use('/user', user)
+
+// // TEST ROUTE - REMOVE LATE
+app.post('/user', (req, res) => {
+  console.log(req.body.username);
+  req.session.username = req.body.username;
+  res.end()
+})
+
+
 
 // Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
