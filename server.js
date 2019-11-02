@@ -6,7 +6,7 @@ const session = require('express-session');
 const morgan = require('morgan')
 const app = express();
 const dbConnection = require('./database');
-// const passport = require('./passport');
+const passport = require('./passport');
 require('dotenv').config();
 // Route requires
 const user = require('./routes/user');
@@ -25,12 +25,15 @@ const contentful = require("contentful");
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE,
-  accessToken: process.env.CONTENTFUL_ACCESSTOKEN
-  // ,
-  // host: "preview.contentful.com"
+  accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
+  host: "preview.contentful.com"
 });
 
 // AUTHENTICATION
+
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls serializeUser and deserializeUser
 
 // app.use( (req, res, next) => {
 //   console.log('req.session', req.session);
@@ -48,12 +51,13 @@ const client = contentful.createClient({
 // // Authentication route
 // // app.use('/user', user)
 
-// // TEST ROUTE - REMOVE LATE
+// // TEST ROUTE - REMOVE LATER
 app.post('/user', (req, res) => {
   console.log(req.body.username);
   req.session.username = req.body.username;
   res.end()
 })
+
 
 
 
