@@ -4,6 +4,7 @@ const PORT = process.env.PORT || 3001;
 const session = require('express-session');
 const app = express();
 const dbConnection = require('./database');
+const passport = require('./passport');
 require('dotenv').config();
 // Route requires
 const user = require('./routes/user');
@@ -18,6 +19,13 @@ const client = contentful.createClient({
   // host: "preview.contentful.com"
 });
 
+// AUTHENTICATION
+
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  return next();
+});
+
 app.use(
   session({
   secret: 'send-ze-codes'
@@ -25,7 +33,7 @@ app.use(
 );
 
 // Authentication route
-app.use('/user', user)
+// app.use('/user', user)
 
 // Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
