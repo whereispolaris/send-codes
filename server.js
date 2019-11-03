@@ -13,7 +13,7 @@ require('dotenv').config();
 const user = require('./routes/user');
 
 // MIDDLEWARE
-
+app.use(morgan('dev'));
 app.use(
 	bodyParser.urlencoded({
 		extended: false
@@ -66,14 +66,6 @@ app.get("/api/articles", (req, res) => {
 
 // ===== AUTHENTICATION ====== //
 
-app.use(passport.initialize());
-app.use(passport.session()); // calls serializeUser and deserializeUser
-
-app.use( (req, res, next) => {
-  console.log('req.session', req.session);
-  return next();
-});
-
 app.use(
   session({
   secret: 'send-ze-codes',
@@ -82,6 +74,21 @@ app.use(
   saveUninitialized: false
   })
 );
+
+app.use(passport.initialize());
+app.use(passport.session()); // calls serializeUser and deserializeUser
+
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  next();
+});
+
+// FOR TESTING ONLY
+// app.post('/user', (req, res) => {
+//   console.log('user signup');
+//   req.session.username = req.body.username;
+//   res.end();
+// });
 
 // Authentication route
 app.use('/user', user);
