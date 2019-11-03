@@ -34,6 +34,7 @@ app.get("/api/blogs",(req, res) => {
     'content_type': 'blogPost'
   })
     .then(response => {
+      res.json(response);
     })
     .catch((error) => {
       res.send("error", error);
@@ -62,8 +63,8 @@ app.get("/api/articles", (req, res) => {
     })
 });
 
-// AUTHENTICATION
-// Passport
+// ===== AUTHENTICATION ====== //
+
 app.use(passport.initialize());
 app.use(passport.session()); // calls serializeUser and deserializeUser
 
@@ -82,8 +83,6 @@ app.use(
 
 // Authentication route
 app.use('/user', user);
-
-
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
