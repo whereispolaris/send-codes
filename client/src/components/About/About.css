@@ -1,0 +1,13 @@
+h2{
+    text-align: left;
+    margin-top: 9%;
+    font-size: 36px;
+    text-decoration-line: underline;
+    font-style: oblique;
+    font-family: "ticketingregular";
+}
+p {
+    text-align: left;
+    font-family: "ticketingregular";
+    font-size: 22px;
+}
