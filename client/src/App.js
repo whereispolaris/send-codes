@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
@@ -12,8 +12,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 
 
-const App = () => {
-  return (
+class App extends Component {
+  render() {
+      return (
     <BrowserRouter>
       <div>
         <Header />
@@ -31,6 +32,7 @@ const App = () => {
       </div>
     </BrowserRouter>
   );
+  }
 }
 
 export default App;
