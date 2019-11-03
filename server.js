@@ -1,8 +1,25 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 3001;
+const session = require('express-session');
+const morgan = require('morgan');
 const app = express();
+const dbConnection = require('./database');
+const MongoStore = require('connect-mongo')(session)
+const passport = require('./passport');
 require('dotenv').config();
+// Route requires
+const user = require('./routes/user');
+
+// MIDDLEWARE
+
+app.use(
+	bodyParser.urlencoded({
+		extended: false
+	})
+)
+app.use(bodyParser.json());
 
 // Contentful
 const contentful = require("contentful");
@@ -10,23 +27,10 @@ const contentful = require("contentful");
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE,
   accessToken: process.env.CONTENTFUL_ACCESSTOKEN
-  // ,
-  // host: "preview.contentful.com"
-});
-
-// Get ALL ENTRIES from Contentful
-app.get("/api/articles", (req, res) => {
-  client.getEntries()
-    .then(response => {
-      res.json(response);
-    })
-    .catch((error) => {
-      res.send("error", error);
-    })
 });
 
 // Get ONLY blog posts from Contentful - Works! 
-app.get("/api/blogs", (req, res) => {
+app.get("/api/blogs",(req, res) => {
   client.getEntries({
     'content_type': 'blogPost'
   })
@@ -47,7 +51,40 @@ app.get("/api/blogs/:id", (req, res) => {
     .catch((error) => {
       res.send("error", error);
     })
-})
+});
+
+// Get ALL ENTRIES from Contentful
+app.get("/api/articles", (req, res) => {
+  client.getEntries()
+    .then(response => {
+      res.json(response);
+    })
+    .catch((error) => {
+      res.send("error", error);
+    })
+});
+
+// ===== AUTHENTICATION ====== //
+
+app.use(passport.initialize());
+app.use(passport.session()); // calls serializeUser and deserializeUser
+
+app.use( (req, res, next) => {
+  console.log('req.session', req.session);
+  return next();
+});
+
+app.use(
+  session({
+  secret: 'send-ze-codes',
+  store: new MongoStore({mongooseConnection: dbConnection}),
+  resave: false, 
+  saveUninitialized: false
+  })
+);
+
+// Authentication route
+app.use('/user', user);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
