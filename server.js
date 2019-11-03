@@ -3,7 +3,7 @@ const path = require("path");
 const bodyParser = require('body-parser')
 const PORT = process.env.PORT || 3001;
 const session = require('express-session');
-const morgan = require('morgan')
+const morgan = require('morgan');
 const app = express();
 const dbConnection = require('./database');
 const passport = require('./passport');
@@ -12,7 +12,7 @@ require('dotenv').config();
 const user = require('./routes/user');
 
 // MIDDLEWARE
-app.use(morgan('dev'))
+
 app.use(
 	bodyParser.urlencoded({
 		extended: false
@@ -25,8 +25,7 @@ const contentful = require("contentful");
 
 const client = contentful.createClient({
   space: process.env.CONTENTFUL_SPACE,
-  accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
-  host: "preview.contentful.com"
+  accessToken: process.env.CONTENTFUL_ACCESSTOKEN
 });
 
 // Get ONLY blog posts from Contentful - Works! 
@@ -50,7 +49,7 @@ app.get("/api/blogs/:id", (req, res) => {
     .catch((error) => {
       res.send("error", error);
     })
-})
+});
 
 // Get ALL ENTRIES from Contentful
 app.get("/api/articles", (req, res) => {
@@ -65,8 +64,8 @@ app.get("/api/articles", (req, res) => {
 
 // AUTHENTICATION
 // Passport
-app.use(passport.initialize())
-app.use(passport.session()) // calls serializeUser and deserializeUser
+app.use(passport.initialize());
+app.use(passport.session()); // calls serializeUser and deserializeUser
 
 app.use( (req, res, next) => {
   console.log('req.session', req.session);
@@ -82,7 +81,7 @@ app.use(
 );
 
 // Authentication route
-app.use('/user', user)
+app.use('/user', user);
 
 
 
