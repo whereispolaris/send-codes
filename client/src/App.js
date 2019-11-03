@@ -18,7 +18,8 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      username: null,
+      user: null
     }
 
     this.getUser = this.getUser.bind(this)
@@ -27,7 +28,6 @@ class App extends Component {
   }
   componentDidMount() {
     this.getUser();
-    console.log(this.state.loggedIn);
   }
 
   updateUser (userObject) {
@@ -40,10 +40,10 @@ class App extends Component {
       console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
-
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          username: response.data.user.username,
+          user: response.data.user
         })
       } else {
         console.log('Get user: no user');
@@ -55,11 +55,29 @@ class App extends Component {
     })
   }
 
+  logOut() {
+    axios.post('user/logout', this.state.user).then(response => {
+      console.log(this.state.user);
+      console.log('Get logout response: ');
+      console.log(response.data);
+      if (response.data.user) {
+        console.log("Logout: The user has been logged out");
+        this.setState({
+          loggedIn: false,
+          username: null
+        })
+      } else {
+        console.log("Logout: Not successful");
+      }
+    })
+  }
+
   render() {
       return (
         <BrowserRouter>
           <div>
             <Header />
+            <button className="btn" onClick={() => this.logOut()}>Log Out </button>
             <Jumbo />
             <div className="container">
               <Switch>
