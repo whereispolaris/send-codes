@@ -6,6 +6,7 @@ const session = require('express-session');
 const morgan = require('morgan');
 const app = express();
 const dbConnection = require('./database');
+const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 require('dotenv').config();
 // Route requires
@@ -76,6 +77,7 @@ app.use( (req, res, next) => {
 app.use(
   session({
   secret: 'send-ze-codes',
+  store: new MongoStore({mongooseConnection: dbConnection}),
   resave: false, 
   saveUninitialized: false
   })
