@@ -12,7 +12,6 @@ const ArticlePage = () => {
         axios.get("/api/blogs/7oihrLo4pnRmbVRw89q5My")
             .then(response => {
                 setArticle(response.data);
-                console.log(article)
                 setLoad(true);
             })
     }, []);
@@ -20,7 +19,6 @@ const ArticlePage = () => {
     if (load) {
         return (
             <div>
-                {console.log(article)}
                 <Article
                     key={article.sys.id}
                     image="https://picsum.photos/id/1073/100/100"

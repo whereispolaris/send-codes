@@ -13,17 +13,13 @@ const ArticleSearch = () => {
     const [subject, setSubject] = useState("general");
     useEffect(() => {
         axios.get("/api/blogs").then(response => {
-            console.log( response.data.items)
             setArticle(response.data.items);
             setLoad(true);
         })
     }, []);
 const handleChange = (e) => {
-    console.log(e.currentTarget.textContent)
     setSubject(e.currentTarget.textContent.toLowerCase())
-    console.log(subject)
 }
-console.log(subject)
     if (load) {
         return (
             <div>
