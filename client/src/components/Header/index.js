@@ -3,7 +3,7 @@ import './Header.css';
 import { Link } from "react-router-dom";
 import logo from './send-codes-logo.png';
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg justify-content-between">
@@ -19,11 +19,11 @@ const Header = () => {
                     <li className="nav-item linkstr">
                         <Link className="nav-link" to="/about">About</Link>
                     </li>
-                    <li className="nav-item linkstr">
+                    {/* <li className="nav-item linkstr">
                         <Link className="nav-link" to="/signup">Signup</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item linkstr">
-                        <Link className="nav-link" to="/login">Login</Link>
+                        <Link className="nav-link" onClick={props.logInlogOut} to="/login">{props.buttonStatus}</Link>
                     </li>
                     <li className="nav-item linkstr">
                         <Link className="nav-link" to="/contribute">Contribute</Link>

@@ -78,7 +78,10 @@ class App extends Component {
       return (
         <BrowserRouter>
           <div>
-            <Header />
+            <Header 
+            logInlogOut="logout function"
+            buttonStatus="Sign Out"
+            />
             <button className="btn" onClick={() => this.logOut()}>Log Out </button>
             <Jumbo />
             <div className="container">
@@ -97,7 +100,10 @@ class App extends Component {
       return (
         <BrowserRouter>
           <div>
-          <Header />
+          <Header 
+          logInlogOut="login function"
+          buttonStatus="Sign In"
+          />
           <Jumbo />
             <div className="container">
               <Switch>
