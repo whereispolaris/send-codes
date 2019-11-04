@@ -79,10 +79,8 @@ class App extends Component {
         <BrowserRouter>
           <div>
             <Header 
-            logInlogOut="logout function"
-            buttonStatus="Sign Out"
+              loggedIn={this.state.loggedIn}
             />
-            <button className="btn" onClick={() => this.logOut()}>Log Out </button>
             <Jumbo />
             <div className="container">
               <Switch>          
