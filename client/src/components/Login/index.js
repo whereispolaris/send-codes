@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import {Link} from 'react-router-dom';
 
 class LoginForm extends Component {
     constructor() {
@@ -34,15 +35,7 @@ class LoginForm extends Component {
                 console.log('login response: ')
                 console.log(response)
                 if (response.status === 200) {
-                    // update App.js state
-                    // this.props.updateUser({
-                    //     loggedIn: true,
-                    //     username: response.data.username
-                    // })
-                    // update the state to redirect to home
-                    this.setState({
-                        redirectTo: '/'
-                    })
+                    window.location.href= "/";
                 }
             }).catch(error => {
                 console.log('login error: ')
@@ -97,6 +90,9 @@ class LoginForm extends Component {
                                 type="submit">Login</button>
                         </div>
                     </form>
+                    <div className="contatiner">
+                    Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
+                    </div>
                 </div>
             )
         }

@@ -8,7 +8,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import "./App.css";
 import "./fonts/stylesheet.css";
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 const axios = require('axios');
 
 
@@ -73,25 +73,47 @@ class App extends Component {
   }
 
   render() {
+
+    if (this.state.loggedIn) {
       return (
         <BrowserRouter>
           <div>
-            <Header />
-            <button className="btn" onClick={() => this.logOut()}>Log Out </button>
+            <Header 
+              loggedIn={this.state.loggedIn}
+            />
             <Jumbo />
             <div className="container">
-              <Switch>
+              <Switch>          
                 <Route exact path="/" component={Home} />
-                <Route exact path="/snippets" component={ArticleSearch} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/signup" component={Signup} />
-                <Route exact path="/login" component={Login} />
-                {/* <Route component={NotFound} /> */}
+                <Route path="/snippets" component={ArticleSearch} />
+                <Route path="/about" component={About} />
+              </Switch>
+            </div>
+          </div>
+        </BrowserRouter>
+      )
+    }
+
+    else {
+      return (
+        <BrowserRouter>
+          <div>
+          <Header 
+          logInlogOut="login function"
+          buttonStatus="Sign In"
+          />
+          <Jumbo />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Login} />
+                <Route path="/login" component={Login} />
+                <Route path="/signup" component={Signup} />
               </Switch>
             </div>
           </div>
         </BrowserRouter>
   );
+    }
   }
 }
 
