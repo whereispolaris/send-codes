@@ -8,7 +8,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import "./App.css";
 import "./fonts/stylesheet.css";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 const axios = require('axios');
 
 
