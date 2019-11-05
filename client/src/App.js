@@ -60,12 +60,13 @@ class App extends Component {
       console.log(this.state.user);
       console.log('Get logout response: ');
       console.log(response.data);
-      if (response.data.user) {
+      if (response.data.msg = "logging out") {
         console.log("Logout: The user has been logged out");
         this.setState({
           loggedIn: false,
           username: null
         })
+        window.location.href= "/";
       } else {
         console.log("Logout: Not successful");
       }
