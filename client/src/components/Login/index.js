@@ -23,8 +23,8 @@ class LoginForm extends Component {
     }
 
     handleSubmit(event) {
-        event.preventDefault()
-        console.log('handleSubmit')
+        event.preventDefault();
+        // console.log('handleSubmit')
 
         axios
             .post('/user/login', {
@@ -32,8 +32,8 @@ class LoginForm extends Component {
                 password: this.state.password
             })
             .then(response => {
-                console.log('login response: ')
-                console.log(response)
+                // console.log('login response: ')
+                // console.log(response)
                 if (response.status === 200) {
                     window.location.href= "/";
                 }

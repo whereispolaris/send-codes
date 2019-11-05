@@ -8,7 +8,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import "./App.css";
 import "./fonts/stylesheet.css";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 const axios = require('axios');
 
 
@@ -36,8 +36,8 @@ class App extends Component {
 
   getUser() {
     axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+      // console.log('Get user response: ')
+      // console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
         this.setState({
@@ -57,15 +57,16 @@ class App extends Component {
 
   logOut() {
     axios.post('user/logout', this.state.user).then(response => {
-      console.log(this.state.user);
-      console.log('Get logout response: ');
-      console.log(response.data);
-      if (response.data.user) {
-        console.log("Logout: The user has been logged out");
+      // console.log(this.state.user);
+      // console.log('Get logout response: ');
+      // console.log(response.data);
+      if (response.data.msg = "logging out") {
+        // console.log("Logout: The user has been logged out");
         this.setState({
           loggedIn: false,
           username: null
         })
+        window.location.href= "/";
       } else {
         console.log("Logout: Not successful");
       }
@@ -82,6 +83,7 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />
             <Jumbo />
+            <button className="btn" onClick={() => this.logOut()}> Log Out</button>
             <div className="container">
               <Switch>          
                 <Route exact path="/" component={Home} />
