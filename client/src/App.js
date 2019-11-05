@@ -36,8 +36,8 @@ class App extends Component {
 
   getUser() {
     axios.get('/user/').then(response => {
-      console.log('Get user response: ')
-      console.log(response.data)
+      // console.log('Get user response: ')
+      // console.log(response.data)
       if (response.data.user) {
         console.log('Get User: There is a user saved in the server session: ')
         this.setState({
@@ -57,11 +57,11 @@ class App extends Component {
 
   logOut() {
     axios.post('user/logout', this.state.user).then(response => {
-      console.log(this.state.user);
-      console.log('Get logout response: ');
-      console.log(response.data);
+      // console.log(this.state.user);
+      // console.log('Get logout response: ');
+      // console.log(response.data);
       if (response.data.msg = "logging out") {
-        console.log("Logout: The user has been logged out");
+        // console.log("Logout: The user has been logged out");
         this.setState({
           loggedIn: false,
           username: null

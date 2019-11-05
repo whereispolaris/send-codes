@@ -26,8 +26,6 @@ const ArticlePage = () => {
                     body={article.fields.body}
                     author={article.fields.author.fields.name}
                     handleFavorite="Function"
-                // isSaved="Function"
-                // articleLink="https://picsum.photos/id/1073/100/100"
                 />
             </div>
         );
