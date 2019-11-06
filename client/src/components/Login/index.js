@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './Login.css';
 
 class LoginForm extends Component {
     constructor() {
@@ -14,7 +15,7 @@ class LoginForm extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -36,7 +37,7 @@ class LoginForm extends Component {
                 // console.log('login response: ')
                 // console.log(response)
                 if (response.status === 200) {
-                    window.location.href= "/";
+                    window.location.href = "/";
                 }
             }).catch(error => {
                 this.setState({
@@ -52,48 +53,43 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
-                    <h4>Login</h4>
-                    <form className="form-horizontal">
+                <div className="container login-container">
+                    <form>
                         <div className="form-group">
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
+                            <h4 className="text-center">Login</h4>
+                            <input className="form-input"
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                            />
                         </div>
                         <div className="form-group">
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    placeholder="password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="form-group ">
-                            <div className="col-7"></div>
-                            <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
+                            <input className="form-input"
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Username"
+                                value={this.state.username}
+                                onChange={this.handleChange}
+                            />
+                            <br />
+                            <div className="form-group text-center">
+
+                                <button
+                                    className="btn btn-dark text-center"
+                                    onClick={this.handleSubmit}
+                                    type="submit">Login
+                            </button>
                                 {this.state.message}
+                                Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
+                            </div>
                         </div>
+
                     </form>
-                    <div className="container">
-                    
-                    </div>
-                    <div className="contatiner">
-                    Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
-                    </div>
+
                 </div>
             )
         }
