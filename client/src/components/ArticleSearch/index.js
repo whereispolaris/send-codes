@@ -4,8 +4,6 @@ import Loading from '../Loading';
 import './Articlesearch.css';
 const axios = require('axios');
 
-
-
 const ArticleSearch = () => {
 
     const [articles, setArticle] = useState([]);
@@ -21,6 +19,22 @@ const handleChange = (e) => {
     e.preventDefault();
     setSubject(e.currentTarget.textContent.toLowerCase())
 }
+const onChange = (e) => {
+    e.preventDefault();
+    // setState({ search: e.target.value});
+};
+
+// class App extends Component {
+//     state = {
+//         search: ""
+//     };
+// }
+// render() {
+//     const { search } = this.State;
+//     const filteredArticles = articlesList.filter(article => {
+//         return article.name.toLowerCase().indexOf(search.toLowerCase()) !==-1;
+//     });
+
     if (load) {
         return (
             <div>
@@ -60,11 +74,17 @@ const handleChange = (e) => {
                             </ul>
                         </div>
                         <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off" className="auto-expand" />
+                            <input type="text" name="search" placeholder="Search" autoComplete="off" className="auto-expand"/>
                             <button className="search-button">Enter</button>
                         </div>
                     </div>
                 </form>
+            {/* <div className="row">
+              {filteredCountries.map(country => {
+                return this.renderCountry(country);
+            })}
+            </div> */}
+                
                 {
                     articles.map((article, index) => {
                         if (
@@ -92,6 +112,7 @@ const handleChange = (e) => {
             </div>
         )
     }
+
 }
 
 export default ArticleSearch;   
