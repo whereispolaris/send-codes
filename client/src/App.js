@@ -84,7 +84,6 @@ class App extends Component {
               logOut={() => this.logOut(this.state.user)}
             />
             <Jumbo />
-            <button className="btn" onClick={() => this.logOut()}> Log Out</button>
             <div className="container">
               <Switch>          
                 <Route exact path="/" component={Home} />
