@@ -8,6 +8,7 @@ class Signup extends Component {
 			username: '',
 			password: '',
 			confirmPassword: '',
+			message: ''
 
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
@@ -32,8 +33,11 @@ class Signup extends Component {
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
-						redirectTo: '/login'
+						message: 'Successful Signup!'
 					})
+					setTimeout(() => {
+						window.location.href= "/login";
+					}, 1000);
 				} else {
 					console.log('username already taken')
 				}
@@ -80,6 +84,7 @@ render() {
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>
+					{this.state.message}
 				</div>
 			</form>
 		</div>

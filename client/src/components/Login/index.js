@@ -9,7 +9,8 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirectTo: null,
+            message: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -38,9 +39,11 @@ class LoginForm extends Component {
                     window.location.href= "/";
                 }
             }).catch(error => {
+                this.setState({
+                    message: "Login failed!"
+                })
                 console.log('login error: ')
                 console.log(error);
-                
             })
     }
 
@@ -53,9 +56,6 @@ class LoginForm extends Component {
                     <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
-                            </div>
                             <div className="col-3 col-mr-auto">
                                 <input className="form-input"
                                     type="text"
@@ -68,9 +68,6 @@ class LoginForm extends Component {
                             </div>
                         </div>
                         <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="password">Password: </label>
-                            </div>
                             <div className="col-3 col-mr-auto">
                                 <input className="form-input"
                                     placeholder="password"
@@ -88,8 +85,12 @@ class LoginForm extends Component {
                                
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
+                                {this.state.message}
                         </div>
                     </form>
+                    <div className="container">
+                    
+                    </div>
                     <div className="contatiner">
                     Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
                     </div>
