@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import axios from 'axios';
+import './Signup.css';
+import { Link } from 'react-router-dom';
+
 
 class Signup extends Component {
 	constructor() {
@@ -36,7 +39,7 @@ class Signup extends Component {
 						message: 'Successful Signup!'
 					})
 					setTimeout(() => {
-						window.location.href= "/login";
+						window.location.href = "/login";
 					}, 1000);
 				} else {
 					console.log('username already taken')
@@ -49,13 +52,13 @@ class Signup extends Component {
 	}
 
 
-render() {
-	return (
-		<div className="SignupForm">
-			<h4>Sign up</h4>
-			<form className="form-horizontal">
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+	render() {
+		return (
+			<div className="container sigup-container">
+
+				<form className="form-horizontal">
+					<div className="form-group">
+						<h4 className="text-center">Sign up</h4>
 						<input className="form-input"
 							type="text"
 							id="username"
@@ -65,32 +68,31 @@ render() {
 							onChange={this.handleChange}
 						/>
 					</div>
-				</div>
-				<div className="form-group">
-					<div className="col-3 col-mr-auto">
+					<div className="form-group">
 						<input className="form-input"
-							placeholder="password"
+							placeholder="Password"
 							type="password"
 							name="password"
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
 					</div>
-				</div>
-				<div className="form-group ">
-					<div className="col-7"></div>
-					<button
-						className="btn btn-primary col-1 col-mr-auto"
-						onClick={this.handleSubmit}
-						type="submit"
-					>Sign up</button>
-					{this.state.message}
-				</div>
-			</form>
-		</div>
+					<div className="form-group text-center">
+						<button
+							className="btn btn-dark col-1 col-mr-auto"
+							onClick={this.handleSubmit}
+							type="submit"
+						>Sign up</button>
+						{this.state.message}
+					</div>
+					<div className="form-group text-center">
+						Already a member ? <Link to="/login">Log in!</Link>
+					</div>
+				</form>
+			</div>
 
-	)
-}
+		)
+	}
 }
 
 export default Signup
