@@ -84,7 +84,10 @@ class LoginForm extends Component {
                                     type="submit">Login
                             </button>
                                 {this.state.message}
-                                Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
+                                <br />
+                                <div className="form-group text-center">
+                                    Not a member yet ? <Link to="/signup">Signup</Link>
+                                </div>
                             </div>
                         </div>
 
