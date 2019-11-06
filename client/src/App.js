@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
+// import Searchbar from './components/Searchbar';
 import About from './components/About';
 import Home from './components/Home';
 import Signup from './components/Signup';
@@ -83,6 +84,7 @@ class App extends Component {
               loggedIn={this.state.loggedIn}
             />
             <Jumbo />
+            {/* <Searchbar/> */}
             <button className="btn" onClick={() => this.logOut()}> Log Out</button>
             <div className="container">
               <Switch>          
