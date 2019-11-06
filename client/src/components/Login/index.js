@@ -9,7 +9,8 @@ class LoginForm extends Component {
         this.state = {
             username: '',
             password: '',
-            redirectTo: null
+            redirectTo: null,
+            message: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -38,9 +39,11 @@ class LoginForm extends Component {
                     window.location.href= "/";
                 }
             }).catch(error => {
+                this.setState({
+                    message: "Login failed!"
+                })
                 console.log('login error: ')
                 console.log(error);
-                
             })
     }
 
@@ -88,8 +91,12 @@ class LoginForm extends Component {
                                
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
+                                {this.state.message}
                         </div>
                     </form>
+                    <div className="container">
+                    
+                    </div>
                     <div className="contatiner">
                     Not a member yet ? <Link className="nav-link" to="/signup">Signup</Link>
                     </div>
