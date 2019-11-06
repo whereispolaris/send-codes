@@ -55,8 +55,8 @@ class App extends Component {
     })
   }
 
-  logOut() {
-    axios.post('user/logout', this.state.user).then(response => {
+  logOut(theUser) {
+    axios.post('user/logout', theUser).then(response => {
       // console.log(this.state.user);
       // console.log('Get logout response: ');
       // console.log(response.data);
@@ -81,6 +81,7 @@ class App extends Component {
           <div>
             <Header 
               loggedIn={this.state.loggedIn}
+              logOut={() => this.logOut(this.state.user)}
             />
             <Jumbo />
             <button className="btn" onClick={() => this.logOut()}> Log Out</button>
