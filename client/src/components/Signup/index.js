@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Signup.css';
+import { Link } from 'react-router-dom';
+
 
 class Signup extends Component {
 	constructor() {
@@ -68,7 +70,7 @@ class Signup extends Component {
 					</div>
 					<div className="form-group">
 						<input className="form-input"
-							placeholder="password"
+							placeholder="Password"
 							type="password"
 							name="password"
 							value={this.state.password}
@@ -77,11 +79,14 @@ class Signup extends Component {
 					</div>
 					<div className="form-group text-center">
 						<button
-							className="btn btn-primary col-1 col-mr-auto"
+							className="btn btn-dark col-1 col-mr-auto"
 							onClick={this.handleSubmit}
 							type="submit"
 						>Sign up</button>
 						{this.state.message}
+					</div>
+					<div className="form-group text-center">
+						Already a member ? <Link to="/login">Log in!</Link>
 					</div>
 				</form>
 			</div>
