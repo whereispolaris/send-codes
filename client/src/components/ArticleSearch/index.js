@@ -10,7 +10,7 @@ const ArticleSearch = () => {
 
     const [articles, setArticle] = useState([]);
     const [load, setLoad] = useState(false);
-    const [searchVal, setSearchVal] = useState("");
+    const [searchVal, setSearchVal] = useState(" ");
     const [subject, setSubject] = useState("general");
     useEffect(() => {
         axios.get("/api/blogs").then(response => {
@@ -27,6 +27,14 @@ const ArticleSearch = () => {
         setSearchVal(e.target.value);
         console.log(searchVal);
     }
+
+    let filteredArticles = articles.filter(
+        (article) => {
+            return article.fields.title.indexOf(searchVal) !== -1;
+        }
+    );
+
+
 
     if (load) {
         return (
@@ -74,7 +82,7 @@ const ArticleSearch = () => {
                     </div>
                 </form>
                 {
-                    articles.map((article, index) => {
+                    filteredArticles.map((article, index) => {
                         if (
                             article.fields.tags.indexOf(subject) != -1
                         ) {
