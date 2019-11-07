@@ -14,11 +14,22 @@ class Search extends React.Component {
             message: ''
         }
     }
+    handleOnInputChange =( event ) => {
+        const query = event.target.value;
+        console.warn ( query );
+    };
+
     render() {
         return (
             <div className="container">
                 <label className="search-label" htmlFor="search-input">
-                    
+                    <input
+                        type="text"
+                        value=""
+                        id="search-input"
+                        placeholder="Search..."
+                        onChange={this.handleOnInputChange}
+                        />
                 </label>
             </div>
         )
