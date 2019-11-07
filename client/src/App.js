@@ -11,6 +11,7 @@ import "./App.css";
 import "./fonts/stylesheet.css";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 const axios = require('axios');
+const matter = require('gray-matter');
 
 
 class App extends Component {
@@ -73,6 +74,7 @@ class App extends Component {
       }
     })
   }
+
 
   render() {
 

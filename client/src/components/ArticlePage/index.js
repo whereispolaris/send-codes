@@ -5,11 +5,11 @@ const axios = require('axios');
 
 const ArticlePage = () => {
 
-    const [article, setArticle] = useState({});
-    const [load, setLoad] = useState(false);
+const [article, setArticle] = useState({});
+const [load, setLoad] = useState(false);
 
-    useEffect(() => {
-        axios.get("/api/blogs/7oihrLo4pnRmbVRw89q5My")
+useEffect(() => {
+    axios.get("/api/blogs/7oihrLo4pnRmbVRw89q5My")
             .then(response => {
                 setArticle(response.data);
                 setLoad(true);

@@ -3,18 +3,21 @@ import Article from '../Article';
 import Loading from '../Loading';
 import './Articlesearch.css';
 const axios = require('axios');
+const matter = require('gray-matter');
+
 
 const ArticleSearch = () => {
 
-    const [articles, setArticle] = useState([]);
-    const [load, setLoad] = useState(false);
-    const [subject, setSubject] = useState("general");
+const [articles, setArticle] = useState([]);
+const [load, setLoad] = useState(false);
+const [subject, setSubject] = useState("general");
     useEffect(() => {
         axios.get("/api/blogs").then(response => {
             setArticle(response.data.items);
             setLoad(true);
         })
     }, []);
+
 const handleChange = (e) => {
     e.preventDefault();
     setSubject(e.currentTarget.textContent.toLowerCase())
@@ -23,17 +26,6 @@ const onChange = (e) => {
     e.preventDefault();
     // setState({ search: e.target.value});
 };
-
-// class App extends Component {
-//     state = {
-//         search: ""
-//     };
-// }
-// render() {
-//     const { search } = this.State;
-//     const filteredArticles = articlesList.filter(article => {
-//         return article.name.toLowerCase().indexOf(search.toLowerCase()) !==-1;
-//     });
 
     if (load) {
         return (
@@ -82,11 +74,7 @@ const onChange = (e) => {
                         </div>
                     </div>
                 </form>
-            {/* <div className="row">
-              {filteredCountries.map(country => {
-                return this.renderCountry(country);
-            })}
-            </div> */}
+
                 
                 {
                     articles.map((article, index) => {
