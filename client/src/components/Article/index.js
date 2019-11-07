@@ -4,12 +4,12 @@ import Markdown from 'markdown-to-jsx';
 
 const Article = (props) => {
     return (
-        <div className="card book-card">
+        <div className="card book-card border-dark">
             <div className="row no-gutters">
                 <div className="col-md-12">
                     <div className="card-body">
                         <h4 className="card-title">{props.title}</h4>
-                        <hr/>
+                        <hr />
                         <Markdown>
                             {`${props.body}`}
                         </Markdown>
