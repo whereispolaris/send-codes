@@ -10,6 +10,7 @@ const ArticleSearch = () => {
 
     const [articles, setArticle] = useState([]);
     const [load, setLoad] = useState(false);
+    const [searchVal, setSearchVal] = useState("");
     const [subject, setSubject] = useState("general");
     useEffect(() => {
         axios.get("/api/blogs").then(response => {
@@ -17,10 +18,16 @@ const ArticleSearch = () => {
             setLoad(true);
         })
     }, []);
-const handleChange = (e) => {
-    e.preventDefault();
-    setSubject(e.currentTarget.textContent.toLowerCase())
-}
+    const handleChange = (e) => {
+        e.preventDefault();
+        setSubject(e.currentTarget.textContent.toLowerCase())
+    }
+
+    const handleSearchBarChange = (e) => {
+        setSearchVal(e.target.value);
+        console.log(searchVal);
+    }
+
     if (load) {
         return (
             <div>
@@ -31,28 +38,28 @@ const handleChange = (e) => {
                                 <li className="nav-item dropdown">
                                     <button id="dropDownButton" className="nav-link dropdown-toggle" data-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">Popular</button>
                                     <div className="dropdown-menu" >
-                                        <button id="dd1" className="dropdown-item" onClick = {
+                                        <button id="dd1" className="dropdown-item" onClick={
                                             handleChange
                                         } >JavaScript</button>
-                                        <button id="dd2" className="dropdown-item" onClick = {
+                                        <button id="dd2" className="dropdown-item" onClick={
                                             handleChange
                                         }>HTML</button>
-                                        <button id="dd3" className="dropdown-item" onClick = {
+                                        <button id="dd3" className="dropdown-item" onClick={
                                             handleChange
                                         }>CSS</button>
-                                        <button id="dd4" className="dropdown-item" onClick = {
+                                        <button id="dd4" className="dropdown-item" onClick={
                                             handleChange
                                         }>PHP</button>
-                                        <button id="dd5" className="dropdown-item" onClick = {
+                                        <button id="dd5" className="dropdown-item" onClick={
                                             handleChange
                                         }>React</button>
-                                        <button id="dd6" className="dropdown-item" onClick = {
+                                        <button id="dd6" className="dropdown-item" onClick={
                                             handleChange
                                         }>Bootstrap</button>
-                                        <button id="dd7" className="dropdown-item" onClick = {
+                                        <button id="dd7" className="dropdown-item" onClick={
                                             handleChange
                                         }>Laravel</button>
-                                        <button id="dd8" className="dropdown-item" onClick = {
+                                        <button id="dd8" className="dropdown-item" onClick={
                                             handleChange
                                         }>Express</button>
                                     </div>
@@ -60,27 +67,29 @@ const handleChange = (e) => {
                             </ul>
                         </div>
                         <div className="textbox">
-                            <input type="text" name="search" placeholder="Search" autoComplete="off" className="auto-expand" />
+                            <input type="text" name="search" placeholder="Search" autoComplete="off" className="auto-expand" value={searchVal} onChange={handleSearchBarChange} />
                             <button className="search-button">Enter</button>
+
                         </div>
                     </div>
                 </form>
                 {
                     articles.map((article, index) => {
                         if (
-                            article.fields.tags.indexOf(subject)!=-1
-                        ) { return (
-                    <Article
-                            key={article.sys.id}
-                            title={article.fields.title}
-                            body={article.fields.body}
-                            author={article.fields.author.fields.name}
-                            articleLink="https://picsum.photos/id/1073/100/100"
-                        />
-                        )
+                            article.fields.tags.indexOf(subject) != -1
+                        ) {
+                            return (
+                                <Article
+                                    key={article.sys.id}
+                                    title={article.fields.title}
+                                    body={article.fields.body}
+                                    author={article.fields.author.fields.name}
+                                    articleLink="https://picsum.photos/id/1073/100/100"
+                                />
+                            )
                         }
-                        
-                })
+
+                    })
                 }
             </div>
         )
@@ -88,7 +97,7 @@ const handleChange = (e) => {
     else {
         return (
             <div>
-                <Loading/>
+                <Loading />
             </div>
         )
     }
