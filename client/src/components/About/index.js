@@ -14,35 +14,35 @@ const About = () => {
             </p>
             <h3 className="text-center">Project Developers</h3>
             <div className="row">
-                <div class="card profile-card" style={{ width: '15rem' }}>
-                    <img src={Suresh} class="card-img-top" alt="santiago" />
-                    <div class="card-body">
-                        <h5 class="card-title">Suresh Mahato</h5>
-                        <p class="card-text">Full Stack Deleloper</p>
+                <div className="card profile-card" style={{ width: '15rem' }}>
+                    <img src={Suresh} className="card-img-top" alt="santiago" />
+                    <div className="card-body">
+                        <h5 className="card-title">Suresh Mahato</h5>
+                        <p className="card-text">Full Stack Deleloper</p>
 
                     </div>
                 </div>
-                <div class="card profile-card" style={{ width: '15rem' }}>
-                    <img src={Joseph} class="card-img-top" alt="santiago" />
-                    <div class="card-body">
-                        <h5 class="card-title">Joseph Hancock</h5>
-                        <p class="card-text">Full Stack Deleloper</p>
+                <div className="card profile-card" style={{ width: '15rem' }}>
+                    <img src={Joseph} className="card-img-top" alt="santiago" />
+                    <div className="card-body">
+                        <h5 className="card-title">Joseph Hancock</h5>
+                        <p className="card-text">Full Stack Deleloper</p>
 
                     </div>
                 </div>
-                <div class="card profile-card" style={{ width: '15rem' }}>
-                    <img src={Lorena} class="card-img-top" alt="santiago" />
-                    <div class="card-body">
-                        <h5 class="card-title">Lorena Ontiveros</h5>
-                        <p class="card-text">Full Stack Deleloper</p>
+                <div className="card profile-card" style={{ width: '15rem' }}>
+                    <img src={Lorena} className="card-img-top" alt="santiago" />
+                    <div className="card-body">
+                        <h5 className="card-title">Lorena Ontiveros</h5>
+                        <p className="card-text">Full Stack Deleloper</p>
 
                     </div>
                 </div>
-                <div class="card profile-card" style={{ width: '15rem' }}>
-                    <img src={Santiago} class="card-img-top" alt="santiago" />
-                    <div class="card-body">
-                        <h5 class="card-title">Santiago Enciso</h5>
-                        <p class="card-text">Full Stack Deleloper</p>
+                <div className="card profile-card" style={{ width: '15rem' }}>
+                    <img src={Santiago} className="card-img-top" alt="santiago" />
+                    <div className="card-body">
+                        <h5 className="card-title">Santiago Enciso</h5>
+                        <p className="card-text">Full Stack Deleloper</p>
 
                     </div>
                 </div>

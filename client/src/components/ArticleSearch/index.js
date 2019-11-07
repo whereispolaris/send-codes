@@ -84,7 +84,7 @@ const ArticleSearch = () => {
                 {
                     filteredArticles.map((article, index) => {
                         if (
-                            article.fields.tags.indexOf(subject) != -1
+                            article.fields.tags.indexOf(subject) !== -1
                         ) {
                             return (
                                 <Article
