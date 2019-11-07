@@ -37,7 +37,7 @@ class LoginForm extends Component {
                 // console.log('login response: ')
                 // console.log(response)
                 if (response.status === 200) {
-                    window.location.href = "/";
+                    window.location.href = "/snippets";
                 }
             }).catch(error => {
                 this.setState({
