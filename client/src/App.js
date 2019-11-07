@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Header from './components/Header';
 import Jumbo from './components/Jumbo';
 import ArticleSearch from './components/ArticleSearch';
@@ -30,7 +30,7 @@ class App extends Component {
     this.getUser();
   }
 
-  updateUser (userObject) {
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -66,7 +66,7 @@ class App extends Component {
           loggedIn: false,
           username: null
         })
-        window.location.href= "/";
+        window.location.href = "/";
       } else {
         console.log("Logout: Not successful");
       }
@@ -79,13 +79,13 @@ class App extends Component {
       return (
         <BrowserRouter>
           <div>
-            <Header 
+            <Header
               loggedIn={this.state.loggedIn}
               logOut={() => this.logOut(this.state.user)}
             />
             <Jumbo />
             <div className="container">
-              <Switch>          
+              <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/snippets" component={ArticleSearch} />
                 <Route path="/about" component={About} />
@@ -100,21 +100,22 @@ class App extends Component {
       return (
         <BrowserRouter>
           <div>
-          <Header 
-          logInlogOut="login function"
-          buttonStatus="Sign In"
-          />
-          <Jumbo />
+            <Header
+              logInlogOut="login function"
+              buttonStatus="Sign In"
+            />
+            <Jumbo />
             <div className="container">
               <Switch>
                 <Route exact path="/" component={Login} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/about" component={About} />
               </Switch>
             </div>
           </div>
         </BrowserRouter>
-  );
+      );
     }
   }
 }

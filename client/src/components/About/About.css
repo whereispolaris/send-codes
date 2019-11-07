@@ -1,9 +1,8 @@
 h2{
-    text-align: left;
+    /* text-align: left; */
     margin-top: 9%;
     font-size: 36px;
     text-decoration-line: underline;
-    font-style: oblique;
     font-family: "ticketingregular";
 }
 p {
@@ -16,9 +15,12 @@ h3{
     font-family: "ticketingregular";
     font-size: 30px;
     text-decoration-line: underline;
-    font-style: oblique;
 }
 h4{
     font-family: "ticketingregular";
     text-align: left;
+}
+
+.profile-card {
+    margin: 10px;
 }
