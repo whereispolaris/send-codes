@@ -37,6 +37,14 @@ const Header = (props) => {
                             <Link className="nav-link" to="/"><img className="main-logo" src={logo} alt="Send Codes Logo" /></Link>
                         </li>
                     </ul>
+                    <ul className="navbar-nav ml-auto">
+                        <li className="nav-item linkstr">
+                            <Link className="nav-link" to="/about">About</Link>
+                        </li>
+                        <li className="nav-item linkstr">
+                            <Link className="nav-link" to="/login">Log In</Link>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         )
