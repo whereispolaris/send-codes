@@ -57,7 +57,7 @@ const ArticleSearch = () => {
                                         }>CSS</button>
                                         <button id="dd4" className="dropdown-item" onClick={
                                             handleChange
-                                        }>PHP</button>
+                                        }>Bash</button>
                                         <button id="dd5" className="dropdown-item" onClick={
                                             handleChange
                                         }>React</button>
@@ -66,10 +66,10 @@ const ArticleSearch = () => {
                                         }>Bootstrap</button>
                                         <button id="dd7" className="dropdown-item" onClick={
                                             handleChange
-                                        }>Laravel</button>
+                                        }>Git</button>
                                         <button id="dd8" className="dropdown-item" onClick={
                                             handleChange
-                                        }>Express</button>
+                                        }>Jquery</button>
                                     </div>
                                 </li>
                             </ul>
