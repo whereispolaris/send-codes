@@ -22,7 +22,7 @@ const Header = (props) => {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item linkstr">
-                            <button className="linkstr btn bg-secondary nav-link" onClick={() => props.logOut()}>Log Out</button>
+                            <button className="linkstr btn bg-secondary nav-link" onClick={() => props.logOut()}>Logout</button>
                         </li>
                     </ul>
                 </nav>
@@ -42,7 +42,7 @@ const Header = (props) => {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         <li className="nav-item linkstr">
-                            <Link className="nav-link" to="/login">Log In</Link>
+                            <a className="linkstr btn bg-secondary nav-link" href="/login">Login</a>
                         </li>
                     </ul>
                 </nav>
