@@ -13,10 +13,6 @@ const About = () => {
                 Send-Codes is built to simplify boilerplates and access useful commands in a simple straight forward manner.
             </p>
             <h3 className="text-center">Project Developers</h3>
-            {/* <h4>Santiago Enciso</h4>
-            <h4>Joseph Hancock</h4>
-            <h4>Suresh Mahato</h4>
-            <h4>Lorena Ontiveros</h4> */}
             <div className="row">
                 <div class="card profile-card" style={{ width: '15rem' }}>
                     <img src={Suresh} class="card-img-top" alt="santiago" />
