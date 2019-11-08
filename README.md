@@ -1,14 +1,32 @@
-# Create React Express App
+# Send Codes :computer:
+### Coding Snippets For Full Stack Development Projects
 
-## About This Boilerplate
+https://send-codes.herokuapp.com/
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Technologies Used
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+- MongoDB
+- Express.js
+- React.js
+- Node
+- Contentful
+- Passport.js
 
-## Starting the app locally
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+
+## Installation
+
+This app uses a Mongo Database called `sendCodesUsers` with a collection called `users`. Authentication will not work without creating this database. 
+
+Create a .env file in the root directory. Sign up for Contentful and put the API keys in the .env file using the following format:
+
+```
+# Contentful
+CONTENTFUL_SPACE=XXXXXXXXXX
+CONTENTFUL_ACCESSTOKEN=XXXXXXXXXX
+```
+
+Install front and backend dependencies. While in this directory, run the following command:
 
 ```
 npm install
